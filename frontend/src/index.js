@@ -5,6 +5,7 @@ import App from './App';
 import Detail from './Pages/ProductDetail'
 import Checkout from './Pages/Checkout';
 import InstruksiBayar from './Pages/InstruksiBayar';
+import Login from './Pages/Login';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/instruksibayar", 
     element: <InstruksiBayar/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   }
 ])
 

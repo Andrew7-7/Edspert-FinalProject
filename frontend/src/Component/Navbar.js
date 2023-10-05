@@ -16,7 +16,7 @@ const Navbar = () =>{
                 </p>
                 <p>Bidang ilmu</p>
                 <p>Tentang edspert</p>
-                <p className="masuk">Masuk/Daftar</p>
+                <Link to={"/login"} className="masuk">Masuk/Daftar</Link>
             </div>
         </div>
     )
