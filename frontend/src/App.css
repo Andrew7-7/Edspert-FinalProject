@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+
+.logo,
+.cardLink {
+  text-decoration: none;
+}
+
+.logo {
+  color: white;
+}
+
+body {
+  background-color: #eff4fa;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarContainer {
+  display: flex;
+  background-color: #2d4059;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: 6vw;
+  padding-left: 7vw;
+  padding-right: 7vw;
+  font-size: 0.9vw;
+}
+
+.rightNav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40vw;
+  align-items: center;
+}
+
+.masuk {
+  background-color: #ff6161;
+  padding: 0.9vw;
+  border-radius: 50px;
+}
+
+.footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: auto;
+}
+
+.upperFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  margin-right: 20vw;
+}
+
+.rightUpper {
+  display: flex;
+}
+
+.rightUpper ul {
+  font-size: 0.9vw;
+}
+
+.rightUpper li {
+  list-style: none;
+  padding-top: 0.5vw;
+  font-size: 0.7vw;
+}
+
+.leftUpper {
+  width: 25vw;
+}
+
+.cardOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vw;
+}
+
+.cardContainer {
+  margin-left: 1vw;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.upperCard {
+  display: flex;
+  justify-content: center;
+  background-color: #152a46;
+  color: white;
+  width: 20vw;
+  height: 7vw;
+  border-radius: 20px 20px 0 0;
+}
+
+.bottomCard {
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.7vw;
+}
+
+.hero,
+.heroProductDetail {
+  background-color: #2d4059;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroProductDetail {
+  padding: 0 6vw 0 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.girlPicDetail {
+  width: 22vw;
+  padding-top: 6vw;
+}
+
+.mentorDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 24vw;
+}
+
+.dropDown {
+  position: absolute;
+  display: none;
+}
+
+.programNav:hover ul.dropDown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #eff4fa;
+  align-items: center;
+  width: 4.3vw;
+  color: black;
+}
+
+.upperRightCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 18px;
+}
+
+.girlPic {
+  margin-left: 16vw;
+  width: 40vw;
+}
+
+.cardPic {
+  width: 5vw;
+  height: 7vw;
+}
+
+.priceDiv {
+  display: flex;
+  justify-content: right;
+  margin: 1vw;
+}
+
+.productDetailBody {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 3vw;
+}
+
+.priceDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5vw;
+  border-top: 1px solid #ddd;
+}
+
+.footerBold {
+  font-size: 0.8vw;
+}
+
+.detailChooser {
+  background-color: white;
+  width: 13vw;
+  border-radius: 10%;
+  padding: 1vw 0 1vw 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1vw;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.09);
+}
+
+.bgOn {
+  color: #197bff;
+  background-color: #f1f7ff;
+  border-right: 4px solid#197BFF;
+  padding: 0.8vw 3vw 0.8vw 0;
+}
+.bgOff {
+  padding: 0.8vw 3vw 0.8vw 0;
+  border-right: 4px solid white;
+}
+
+.daftarLink {
+  display: flex;
+  justify-content: center;
+  background-color: #ffcd29;
+  width: 10vw;
+  margin-left: 1.3vw;
+  border-radius: 50px;
+  padding: 0.6vw;
+  color: white;
+}
+
+
+
+.titleDetail {
+  margin-left: 2.7vw;
+}
+
+.materiDetail {
+  display: flex;
+}
+
+.checkBoxMargin {
+  margin-left: 1vw;
+}
+.materiTab {
+  background-color: white;
+  width: 60vw;
+  padding: 1.5vw 0 2vw 4vw;
+  margin-left: 5vw;
+  border-radius: 20px;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.09);
+}
+
+.siapBergabung{
+  background-color: #2B3E58;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw;
+}
+
+
+.backDiv{
+  display: flex;
+  align-items: center;
+  /* background-color: white; */
+  margin-left: 5vw;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.checkoutTitle{
+  font-size: 2vw;
+  color: #131313;
+  font-weight: 700;
+  margin-left: 5vw;
+  margin-bottom: 2vw;
+}
+
+.checkoutBody{
+  display: flex;
+  margin-left: 5vw;
+  margin-right: 7vw;
+  margin-bottom: 8vw;
+  justify-content: space-between;
+}
+
+.metodePembayaran,.ringkasanPesanan{
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  background-color: white;
+  border-radius: 20px;
+  width: 40vw;
+}
+
+.ringkasanPesanan{
+  padding-left: 5vw;
+}
+
+.ringkasanImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2B3E58;;
+  width: 8vw;
+  height: 7.5vw;
+  border-radius: 5px;
+  margin-right: 2vw;
+}
+
+.chooserPic{
+  width: 5vw;
+}
+
+.chooserCircle{
+  width: 1vw;
+  height: 1vw;
+  border-radius: 100%;
+  border: 1px solid #CED1D4;
+}
+
+.chooserChild{
+  display: flex;
+  padding: 1vw;
+  border: 1px solid #CED1D4;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1vw 0 1vw 0;
+  border-radius: 4px;
+}
+
+.chooserDiv{
+  border-top: 1px solid var(--border-subdued, #C9CCCF);
+}
+
+.imageDiv{
+  display: flex;
+  justify-content: space-between;
+  width: 26vw;
+}
+
+.inputPromo{
+  border-radius: 4px 0px 0px 4px;
+border: 1px solid var(--Text-input-border, #A7ACB1);
+background: var(--surface-default, #FFF);
+width: 23vw;
+height: 3vw;
+font-size: 1vw;
+padding-left: 2vw;
+}
+
+.terapkanButton{
+  border-radius: 0px 4px 4px 0px;
+border: 1px solid #ABB0B5;
+background: #2A61A8;
+color: white;
+  height: 3vw;
+  width: 7vw;
+}
+
+.ringkasanDiv{
+  border-bottom: 1px solid #ABB0B5;
+}
+
+.hargaDiv{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2vw 0 0.2vw 0;
+}
+
+.ringkasanBottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bayarButton{
+  border-radius: 50px;
+background: #2A61A8;
+color: white;
+width: 10vw;
+height: 2vw;
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instruksiBody{
+  background-color: white;
+  width: 90vw;
+  padding: 4vw;
+  margin-left: 5vw;
+  
+  border-radius: 20px 20px 0 0;
+display: flex;
+justify-content: space-around;
+}
+
+.leftInstruksiBody{
+margin-right: 15vw;
+}
+
+.rightInstruksiBody{
+margin-right: 15vw;
+}
+
+.manPic{
+  width: 5vw;
+  height: 1.5vw;
+}
+
+.rekDiv{
+  display: flex;
+  align-items: center;
+}
+
+.instruksiChooser{
+  display: flex;
+  justify-content: space-between;
+  width: 27vw;
+  border-bottom: 1px solid #C9CCCF;
+}
+
+.bottomInstruksi{
+  background-color: #2B3E58;
+  width: 90vw;
+  padding: 5vw;
+  color: white;
+  margin-bottom: 6vw;
+  margin-left: 5vw;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.verifikasiButton{
+  margin-top: 2vw;
+  padding: 1vw 2vw 1vw 2vw;
+  border-radius: 50px;
+background: var(--secondary-yellow, #FCBC30);
+}
+
+.nyala{
+  border-bottom: 2px solid #1097E7;;
+}
+
+.salinDiv{
+  display: flex;
+  align-items: center;
+}
