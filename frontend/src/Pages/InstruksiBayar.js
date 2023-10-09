@@ -3,9 +3,11 @@ import Navbar from "../Component/Navbar";
 import Footer from "../Component/Footer";
 import Typography from "../Component/Typography";
 import { LeftArrow, ProfilePesanan } from "../Component/smallComponent";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import cardImage from "../Images/cardImage.png";
 import mandiriPic from "../Images/mandiri.png";
+import bcaPic from "../Images/bca.png";
+import questionMark from "../Images/questionMark.png";
 const InstruksiBayar = () => {
   const [instruksi, setInstruksi] = useState("ATM");
 
@@ -53,20 +55,42 @@ const InstruksiBayar = () => {
     );
   };
 
-  const [text,setText] = useState("");
-  const salinText = ()=>{
+  const [text, setText] = useState("");
+  const salinText = () => {
     setText("137000299089");
     navigator.clipboard.writeText(text);
+  };
+
+  const location = useLocation();
+  // console.log(location);
+  const simply = location.state.course;
+  const { metodeBayar } = useParams();
+  console.log(metodeBayar);
+  const navigate = useNavigate();
+  const {bankImage} = useParams();
+  const ShowPic = ()=>{
+    if(bankImage==="none"){
+      return <img src={questionMark} className="bankImage"/>
+    }else if(bankImage==="bca"){
+      return <img src={bcaPic} className="bankImage" />;
+    }else{
+      return <img src={mandiriPic} className="bankImage" />;
+    }
   }
 
   return (
     <div>
       <Navbar />
       <div className="backDiv">
-        <LeftArrow link={"/checkout"} />
-        <Link to={"/checkout"} style={{ color: "#6D7175", fontSize: "0.9vw" }}>
+        <LeftArrow link={-1} state={simply} />
+        <div
+          style={{ color: "#6D7175", fontSize: "0.9vw", cursor: "pointer" }}
+          onClick={() => {
+            navigate(-1, { state: { course: simply } });
+          }}
+        >
           &nbsp;Checkout&nbsp;&gt;
-        </Link>
+        </div>
         <Typography colors={"#1097E7"} sizes={0.9}>
           &nbsp;Instruksi Bayar
         </Typography>
@@ -77,10 +101,10 @@ const InstruksiBayar = () => {
         <div className="leftInstruksiBody">
           <ProfilePesanan
             image={cardImage}
-            title={"Programming Laravel"}
-            subtitle={"Getting Started with Laravel 9"}
-            batch={"September 2022"}
-            mentor={"William Hartono, Farel Prayoga"}
+            title={simply.title}
+            subtitle={simply.detail}
+            batch={simply.batch}
+            mentor={simply.mentor}
           />
           <br />
           <Typography sizes={1.2} bolds={700}>
@@ -88,11 +112,13 @@ const InstruksiBayar = () => {
           </Typography>
           <br />
           <Typography sizes={1} colors={"#6D7175"}>
-            Bank Transfer (verifikasi manual)-Mandiri
+            {metodeBayar === "Silahkan Pilih Metode Pembayaran"
+              ? metodeBayar + " pada halaman checkout"
+              : metodeBayar}
           </Typography>
           <br />
           <div className="rekDiv">
-            <img src={mandiriPic} className="manPic" />
+            <ShowPic />
             &nbsp;&nbsp;&nbsp;
             <div>
               <div className="salinDiv">
@@ -100,7 +126,11 @@ const InstruksiBayar = () => {
                   No Rek. 137000299089
                 </Typography>
                 &nbsp;&nbsp;
-                <div onClick={salinText} className="salinDiv" style={{cursor: "pointer"}}>
+                <div
+                  onClick={salinText}
+                  className="salinDiv"
+                  style={{ cursor: "pointer" }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="13"
@@ -183,7 +213,9 @@ const InstruksiBayar = () => {
       </div>
       <div className="bottomInstruksi">
         Sudah Transfer? Lakukan verifikasi pembayaran segera!
-        <Link to={"/"} className="verifikasiButton">Verifikasi Pembayaran</Link>
+        <Link to={"/"} className="verifikasiButton">
+          Verifikasi Pembayaran
+        </Link>
       </div>
 
       <Footer />

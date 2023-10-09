@@ -81,6 +81,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 10vw;
 }
 
@@ -448,4 +449,15 @@ background: var(--secondary-yellow, #FCBC30);
 .salinDiv{
   display: flex;
   align-items: center;
+}
+
+.numbers{
+  padding: 1vw;
+  border: 1px solid black;
+  background-color: white;
+  margin-bottom: 1vw;
+}
+
+.bankImage{
+  width: 2.7vw;
 }

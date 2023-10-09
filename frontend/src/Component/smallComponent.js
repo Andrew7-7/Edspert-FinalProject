@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App";
 import Typography from "./Typography";
 const YellowCheckbox = () => {
@@ -23,9 +23,16 @@ const YellowCheckbox = () => {
   );
 };
 
-const LeftArrow = ({ link }) => {
+const LeftArrow = ({ link ,state}) => {
+  const navigate = useNavigate();
   return (
-    <Link to={link} className="leftArrow">
+    <div
+      onClick={() => {
+        navigate(link, { state: { course: state } });
+      }}
+      className="leftArrow"
+      style={{ cursor: "pointer" }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -47,7 +54,7 @@ const LeftArrow = ({ link }) => {
           stroke-linecap="round"
         />
       </svg>
-    </Link>
+    </div>
   );
 };
 

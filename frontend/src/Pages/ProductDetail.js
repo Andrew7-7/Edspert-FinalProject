@@ -3,9 +3,8 @@ import Navbar from "../Component/Navbar";
 import Footer from "../Component/Footer";
 import Typography from "../Component/Typography";
 import girlPic from "../Images/girl.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { YellowCheckbox } from "../Component/smallComponent";
-import Checkout from "./Checkout";
 
 const MateriDetail = ({ children, title }) => {
   return (
@@ -24,41 +23,6 @@ const MateriDetail = ({ children, title }) => {
         </Typography>
       </div>
       <br />
-    </div>
-  );
-};
-const materiTab = () => {
-  return (
-    <div className="materiTab">
-      <Typography colors={"#2B3E58"} bolds={700} sizes={2}>
-        Materi
-      </Typography>
-      <br />
-      <MateriDetail title={"Pengenalan Programming Laravel"}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old. Richard McClintock, a Latin professor at Hampden.
-      </MateriDetail>
-      <MateriDetail title={"Materi Bootcamp Laravel 2"}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old. Richard McClintock, a Latin professor at Hampden.
-      </MateriDetail>
-      <MateriDetail title={"Materi Bootcamp Laravel 3"}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old. Richard McClintock, a Latin professor at Hampden.
-      </MateriDetail>
-      <MateriDetail title={"Materi Bootcamp Laravel 4"}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old. Richard McClintock, a Latin professor at Hampden.
-      </MateriDetail>
-      <MateriDetail title={"Materi Bootcamp Laravel 5"}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000 years old. Richard McClintock, a Latin professor at Hampden.
-      </MateriDetail>
     </div>
   );
 };
@@ -90,6 +54,50 @@ const ProductDetail = () => {
     setMateri("bgOff");
     setFasilitas("bgOn");
   };
+
+  const MateriTab = () => {
+    return (
+      <div className="materiTab">
+        <Typography colors={"#2B3E58"} bolds={700} sizes={2}>
+          Materi
+        </Typography>
+        <br />
+        <MateriDetail title={location.state.course.title}>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden.
+        </MateriDetail>
+        <MateriDetail title={"Materi Bootcamp Laravel 2"}>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden.
+        </MateriDetail>
+        <MateriDetail title={"Materi Bootcamp Laravel 3"}>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden.
+        </MateriDetail>
+        <MateriDetail title={"Materi Bootcamp Laravel 4"}>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden.
+        </MateriDetail>
+        <MateriDetail title={"Materi Bootcamp Laravel 5"}>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden.
+        </MateriDetail>
+      </div>
+    );
+  };
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
 
   return (
     <div>
@@ -138,14 +146,24 @@ const ProductDetail = () => {
             Fasilitas
           </button>
           <div className="priceDetail">
-            <Typography colors={"#6D7175)"}>Rp. 125.000</Typography>
-            <Typography colors={"#FF6A28"}>Rp. 99.000</Typography>
+            <Typography colors={"#6D7175)"}>
+              <del>{location.state.course.oldPrice}</del>
+            </Typography>
+            <Typography colors={"#FF6A28"}>
+              {location.state.course.newPrice}
+            </Typography>
           </div>
-          <Link to={"/checkout"} className="daftarLink">
+          <div
+          style={{cursor:"pointer"}}
+            onClick={() => {
+              navigate("/checkout", { state: { course:location.state.course } });
+            }}
+            className="daftarLink"
+          >
             Daftar Kelas
-          </Link>
+          </div>
         </div>
-        {materi === "bgOn" ? materiTab() : fasilitasTab()}
+        {materi === "bgOn" ? MateriTab() : fasilitasTab()}
       </div>
 
       <div className="siapBergabung">

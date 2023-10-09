@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Typography from "./Typography";
 const ProgCard = (props) => {
   return (
-    //pakai map nanti buat looping card
-    <Link to="/detail" className="cardLink">
+    
+    <div className="cardLink" style={{cursor:"pointer"}}>
       <div className="cardContainer">
         <div className="upperCard">
           <img src={cardImage} className="cardPic" />
@@ -32,12 +32,16 @@ const ProgCard = (props) => {
           </Typography>
           <Typography sizes={0.75}>Mentor &nbsp;{props.mentor}</Typography>
           <div className="priceDiv">
-            <Typography sizes={1}>{props.oldPrice}</Typography>
-            <Typography sizes={1} colors={"#0ACF83"}>{props.newPrice}</Typography>
+            <Typography sizes={0.8}>
+              <del className="mr-1">{props.oldPrice}</del>
+            </Typography>
+            <Typography sizes={1} colors={"#0ACF83"} bolds={500}>
+              {props.newPrice}
+            </Typography>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

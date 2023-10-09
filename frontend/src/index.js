@@ -10,27 +10,27 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 const router = createBrowserRouter([
-  { 
-    path: "/", 
-    element:  <App/>,
-  },
-  { 
-    path: '/detail', 
-    element: <Detail/>,
+  {
+    path: "/",
+    element: <App />,
   },
   {
-    path: "/checkout", 
-    element: <Checkout/>,
+    path: "/detail",
+    element: <Detail />,
   },
   {
-    path: "/instruksibayar", 
-    element: <InstruksiBayar/>,
+    path: "/checkout",
+    element: <Checkout />,
+  },
+  {
+    path: "/instruksibayar/:metodeBayar/:bankImage",
+    element: <InstruksiBayar />,
   },
   {
     path: "/login",
-    element: <Login/>,
-  }
-])
+    element: <Login />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
